@@ -38,16 +38,15 @@ class App extends Component {
     }
     return creditTotal - debitTotal
   }
-    
+
   async componentDidMount(){
     const debitEndpoint = 'https://moj-api.herokuapp.com/debits'
     const creditEndpoint = 'https://moj-api.herokuapp.com/credits'
     const debits = await axios.get(debitEndpoint)
     const credits = await axios.get(creditEndpoint)
     this.setState({debits:debits.data, credits:credits.data})
-    console.log(this.state.debits)
   }
-    
+
     render() {
 	const HomeComponent = () => (<Home accountBalance={this.accountBalance()}/>);
 	const UserProfileComponent = () => (
@@ -55,7 +54,7 @@ class App extends Component {
 	);
 	const LogInComponent = () => (<LogIn user={this.state.currentUser} mockLogIn={this.mockLogIn} {...this.props}/>);
 	const DebitsComponent = () => (<Debits debits={this.state.debits}/>);
-	const CreditsComponent = () => (<Credits user={this.state.currentUser}/>);
+	const CreditsComponent = () => (<Credits credits={this.state.credits}/>);
 	return (
   		<Router>
     		<div>

@@ -4,12 +4,6 @@ import {Link} from 'react-router-dom';
 class Debits extends Component {
     constructor(props){
 	super(props)
-	this.state = {
-	    debits: [],
-	    description: '',
-	    amount: '',
-	    date: ''
-	};
     }
 
     display() {
