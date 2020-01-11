@@ -29,7 +29,7 @@ class App extends Component {
   }
   accountBalance = () => {
     let creditTotal = 0
-    let debitTotal = 0
+      let debitTotal = 0
     for(let i = 0; i < this.state.credits.length; i++){
       creditTotal += this.state.credits[i].amount
     }
@@ -53,8 +53,8 @@ class App extends Component {
 		<UserProfile userName={this.state.currentUser.userName} memberSince={this.state.currentUser.memberSince}/>
 	);
 	const LogInComponent = () => (<LogIn user={this.state.currentUser} mockLogIn={this.mockLogIn} {...this.props}/>);
-	const DebitsComponent = () => (<Debits debits={this.state.debits}/>);
-	const CreditsComponent = () => (<Credits credits={this.state.credits}/>);
+	const DebitsComponent = () => (<Debits accountBalance={this.accountBalance()} debits={this.state.debits}/>);
+	const CreditsComponent = () => (<Credits accountBalance={this.accountBalance()} credits={this.state.credits}/>);
 	return (
   		<Router>
     		<div>
