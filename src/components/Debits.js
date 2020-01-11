@@ -7,7 +7,8 @@ class Debits extends Component {
 	super(props)
 	this.state = {
 	    description: '',
-	    amount: ''
+	    amount: '',
+	    debits: []
 	};
     }
 
@@ -24,6 +25,12 @@ class Debits extends Component {
 	var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
 	var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
 	var dateTime = date+time;
+	let newSubmission = {
+	    decription: this.state.description,
+	    amount: this.state.amount,
+	    date: {dateTime}
+	};
+	this.state.debits.push(newSubmission);
     }
 
     form() {
@@ -33,7 +40,6 @@ class Debits extends Component {
                 Description:
                 <input type="text" value={this.state.description} onChange={this.handleDescriptionChange} name="first_name" />
                 </label>
-
                 <label>
                 Amount:
                 <input type="text" value={this.state.amount} onChange={this.handleAmountChange} name="last_name" />
@@ -45,7 +51,6 @@ class Debits extends Component {
     }
     
     display() {
-	console.log(this.props.debits);
 	if(this.props.debits.length === 0){
 	    return null;
 	}
