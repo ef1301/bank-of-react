@@ -21,27 +21,27 @@ class Debits extends Component {
 	    let items = this.props.debits.map( (element) => {
 		return (
 			<div key={element}>
-			<p>Debit Description: {this.props.debits[element].description}</p> <br/>
-			<p>Debit amount: {this.props.debits[element].amount}</p> <br/>
-			<p>Debit date: {this.props.debits[element].date}</p> <br/>
+			<p>Debit Description: {element.description}</p> <br/>
+			<p>Debit amount: {element.amount}</p> <br/>
+			<p>Debit date: {element.date}</p> <br/>
 			</div>
 		);
 	    });
 	    return items;
 	}
     }
-    
+
     render() {
 	return(
 		<div>
 		<h1>Debits</h1>
-		
+
 		<div className="navbar">
 		<Link to="/">Home</Link>
 		<Link to="/UserProfile">User Profile</Link>
 		<Link to="/Credits">Credits</Link>
 		</div>
-		
+
 	    {this.display()}
       		</div>);
     }
