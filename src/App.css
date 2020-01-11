@@ -36,3 +36,24 @@
     transform: rotate(360deg);
   }
 }
+
+.navbar {
+    width: 100%;
+    padding: 10px;
+    background-color: navy;
+}
+
+.navbar a {
+    margin: 5px;
+    padding: 5px;
+    color: white;
+    font-weight: bold;
+}
+
+.navbar a:hover {
+    color: gold;
+}
+
+.navbar a:active {
+    color: white;
+}
